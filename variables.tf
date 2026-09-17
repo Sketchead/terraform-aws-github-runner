@@ -165,7 +165,7 @@ variable "iam_overrides" {
 variable "scale_up_reserved_concurrent_executions" {
   description = "Amount of reserved concurrent executions for the scale-up lambda function. A value of 0 disables lambda from being triggered and -1 removes any concurrency limitations."
   type        = number
-  default     = 1
+  default     = -1
 }
 
 variable "webhook_lambda_zip" {

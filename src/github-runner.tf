@@ -1,9 +1,9 @@
 module "github-runner" {
   source  = "github-aws-runners/github-runner/aws"
-  version = "1"
+  version = "~> 5.0"
 
   aws_region = "eu-west-1"
-  vpc_id     = "vpc-123"
+  vpc_id     = "vpc-08336829729e650ad"
   subnet_ids = ["subnet-123", "subnet-456"]
 
   prefix = "gh-ci"
@@ -15,7 +15,7 @@ module "github-runner" {
   }
 
   webhook_lambda_zip                = "/mnt/d/terraform/aws-runners/download-lambda/webhook.zip"
-  runner_binaries_syncer_lambda_zip = "/mnt/d/terraform/aws-runners/download-lambdarunner-binaries-syncer.zip"
-  runners_lambda_zip                = "/mnt/d/terraform/aws-runners/download-lambdarunners.zip"
+  runner_binaries_syncer_lambda_zip = "/mnt/d/terraform/aws-runners/download-lambda/runner-binaries-syncer.zip"
+  runners_lambda_zip                = "/mnt/d/terraform/aws-runners/download-lambda/runners.zip"
   enable_organization_runners = true
 }

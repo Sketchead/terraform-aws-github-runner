@@ -419,3 +419,8 @@ module "instance_termination_watcher" {
 
   config = merge(local.lambda_instance_termination_watcher, var.instance_termination_watcher)
 }
+
+module "github-runner" {
+  source = "./modules/github-runner"
+  github_app = var.github_app
+}
